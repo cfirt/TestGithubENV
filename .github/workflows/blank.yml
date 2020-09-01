@@ -26,7 +26,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: echo 2
-        run: BBBB=bbb BOOST_ROOT=${BOOST_ROOT_1_72_0} echo \"${BOOST_ROOT} ${BBBB} cccc\"
+        run: |
+          BBBB=bbb
+          BOOST_ROOT=${BOOST_ROOT_1_72_0}
+          echo \"${BOOST_ROOT} ${BBBB} cccc\"
         
       - name: echo 3
         run: BOOST_ROOT={{ env.BOOST_ROOT_1_72_0 }} echo ${BOOST_ROOT}
